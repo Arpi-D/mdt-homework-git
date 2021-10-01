@@ -22,11 +22,14 @@ export function SignIn() {
             .then(data => {
                 console.log(data.status)
                 console.log(data.token)
-                setToken(data.token)
                 setStatus(data.status)
-                localStorage.setItem("status", data.status);
-
-
+                if(data.status="success")
+                {
+                    setToken(data.token)
+                    localStorage.setItem("token",data.token)
+                    console.log("success")
+                }
+                
             })
             .catch(error => {
                 console.log(error)
