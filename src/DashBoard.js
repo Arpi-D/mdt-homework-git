@@ -59,7 +59,7 @@ function DashBoard() {
 
 
 
-    });
+    },[]);
     console.log(transactions);
 
 
@@ -73,8 +73,10 @@ function DashBoard() {
 
             </div>
             <div>
+                
                 {transactions.map((item, index) => {
                     return (
+                        <table> 
 
                         < tr key={index}  >
                             {item.type == 'transfer' &&
@@ -99,6 +101,7 @@ function DashBoard() {
 
 
                         </tr>
+                        </table>
 
 
                     );

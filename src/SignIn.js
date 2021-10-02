@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DashBoard from './DashBoard';
+import { useHistory } from 'react-router-dom';
 
 export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("");
-    const [status, setStatus] = useState("");
-
+    const history = useHistory();
+    
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -26,10 +27,10 @@ export default function SignIn() {
                 if(data.status="success")
                 {
                     setToken(data.token)
-                    setStatus(data.status)
                     localStorage.setItem("token",data.token)
                 }
-                
+                console.log("history" + history)
+                history.push("/dashboard")
             })
             .catch(error => {
                 console.log(error)
@@ -51,7 +52,6 @@ export default function SignIn() {
             <div>
                 <input type="submit" value="Submit" />
             </div>
-
         </form>
     );
 }
