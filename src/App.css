@@ -29,8 +29,7 @@
   border-width: 0;
   margin: 5;
   margin-top: 10px;
-  background-color: lightgrey;
-
+  background-color: lightgrey
 
 }
 .TransactionTable
@@ -41,11 +40,29 @@
  background-color: gold;
 }
 
+
 .transfer{
   background-color:cadetblue;
 }
 .receive{
   background-color: burlywood;
+}
+
+.transferPage
+{
+  margin-top:50vh;
+  margin-bottom: 50vh;
+}
+.inputButtonTransfer{
+  width: 100px;
+  height: 30px;
+  outline: 0;
+  border-radius: 6pc;
+  border-width: 0;
+  margin: 5;
+  margin-top: 10px;
+  background-color: lightgrey
+
 }
 
 

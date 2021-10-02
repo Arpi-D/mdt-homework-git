@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from 'react-router-dom';
+import './App.css';
+
 
 function Transfer() {
     const [payee, setPayee] = useState([]);
     const [selectedValue, setSelectedValue] = useState(" ");
-    const [date,setDate] = useState(" ")
-    const [description, setDescription]= useState(" ")
-    const [amount,setAmount] = useState(" ")
+    const [date,setDate] = useState("")
+    const [description, setDescription]= useState("")
+    const [amount,setAmount] = useState("")
     const history = useHistory();
 
 
@@ -71,35 +73,38 @@ function Transfer() {
         
     }
     return (
-        <div>
-           <form onSubmit={handleSubmit} >
+        <div className= "App">
+           <form className="transferPage" onSubmit={handleSubmit} >
             <label>Reciepent</label>
                 <select onChange={e => handleChange(e)}>
                 <option value="select" />
                     {payee.map((item, index) => {
                         return (
-                            <option value={item.accountNo}>
+                            <option key={item.id}  value={item.accountNo}>
                                 {item.accountHolderName}
                             </option>
                         );
                     })}
-                </select>
-                
-            <label>Date</label>
-            <input type="text" value={date} onChange={event => setDate(event.target.value)} />
-            <label>Description</label>
-            <input type="text" value={description} onChange={event => setDescription(event.target.value)} />
-            <label>Amount</label>
-            <input type="text" value={amount} onChange={event => setAmount(event.target.value)} />
-
-                <label>accountNo </label> {selectedValue}
-                <input type="submit" value="Submit" />
-            </form>
+                </select>   
+           <div>
+            <input  className= "inputText"  type="text" placeholder= "DATE" value={date} onChange={event => setDate(event.target.value)} />
+           </div>
             <div>
-            <button onClick={cancel}>
+            <input className= "inputText"  type="text" placeholder= "DESCRIPTION" value={description} onChange={event => setDescription(event.target.value)} />
+            </div>
+            <div>
+            <input className= "inputText"  type="text" placeholder= "AMOUNT" value={amount} onChange={event => setAmount(event.target.value)} />
+            </div>
+                <div>
+                <input className= "inputButtonTransfer" type="submit" value="Submit" />
+                
+            <button className= "inputButtonTransfer" onClick={cancel}>
                     Cancel
                 </button>
+               
                 </div>
+            </form>
+           
         </div>
     );
 
