@@ -1,7 +1,8 @@
 import './App.css';
 import { Router, Route, Switch } from 'react-router-dom';
-import { SignIn } from './SignIn';
 import DashBoard from './DashBoard';
+import Transfer from './Transfer';
+import SignIn from "./SignIn"
 
 const Routing = () => {
   return(
@@ -9,6 +10,7 @@ const Routing = () => {
       <Switch>
         <Route exact path="/" component={SignIn} />
         <Route path="/dashboard" component={DashBoard} />
+        <Route path="/transfer" component={Transfer} />
       </Switch>
     </Router>
   )
@@ -17,7 +19,7 @@ const Routing = () => {
 function App() {
   return (
     <div className="App">
-     <DashBoard/>
+     <Transfer/>
     </div>
   );
 }

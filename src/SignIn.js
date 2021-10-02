@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DashBoard from './DashBoard';
 
-export function SignIn() {
+export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("");
