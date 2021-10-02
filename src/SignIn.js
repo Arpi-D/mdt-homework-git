@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import DashBoard from './DashBoard';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import './App.css';
 
 export default function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [token, setToken] = useState("");
     const history = useHistory();
     
     const handleSubmit = (event) => {
@@ -24,9 +23,8 @@ export default function SignIn() {
             .then(data => {
                 console.log(data.status)
                 console.log(data.token)
-                if(data.status="success")
+                if(data.status==="success")
                 {
-                    setToken(data.token)
                     localStorage.setItem("token",data.token)
                 }
                 console.log("history" + history)
@@ -41,17 +39,16 @@ export default function SignIn() {
 
 
     return (
-
-        <form onSubmit={handleSubmit} >
-            <label>User Name</label>
-            <input type="text" value={username} onChange={event => setUserName(event.target.value)} />
+        <div className= "App">
+        <form className = "SignIN" onSubmit={handleSubmit} >
+            <input className= "inputText" type="text" placeholder="USERNAME" value={username} onChange={event => setUserName(event.target.value)} />
             <div>
-                <label>Password</label>
-                <input type="password" value={password} onChange={event => setPassword(event.target.value)}></input>
+                <input className= "inputText" type="password"  placeholder="PASSWORD" value={password} onChange={event => setPassword(event.target.value)}></input>
             </div>
             <div>
-                <input type="submit" value="Submit" />
+                <input className= "inputSubmit" type="submit" value="Login" />
             </div>
         </form>
+        </div>
     );
 }

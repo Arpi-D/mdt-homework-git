@@ -1,18 +1,15 @@
-import { BrowserRouter as Router, Route, Redirect ,Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
 import './App.css';
 import Transfer from './Transfer';
 import SignIn from "./SignIn"
 import DashBoard from './DashBoard';
 import PrivateRoute from './PrivateRoute';
-import { useState, useEffect } from 'react';
 
 
 function App() {
-
-  const [validate,setValidate] = useState(true)
  
   return (
-    <div className="App">
+    <div >
       <Router>
       <Switch>
         <Route exact path='/' component={SignIn} />

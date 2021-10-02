@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 function PrivateRoute({ component: Component, ...rest }) {
     
@@ -8,7 +8,7 @@ function PrivateRoute({ component: Component, ...rest }) {
     console.log("Token from routec "+ localStorage.getItem('token'))
     const token = localStorage.getItem('token')
 
-    if (token == undefined || token == null)
+    if (token === undefined || token === null)
     {
       console.log("Inside validator" + isAuthenticated)
      isAuthenticated = false

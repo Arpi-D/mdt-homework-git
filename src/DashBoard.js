@@ -1,13 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import moment from 'moment';
+import { useHistory } from 'react-router-dom';
+
+
 
 function DashBoard() {
 
     const [balance, setBalanace] = useState("");
     const [transactions, setTransactions] = useState([]);
+    const history = useHistory();
 
-
+    const transferRedirect = (event) => {
+        event.preventDefault()
+        history.push("/transfer")
+    }
 
     useEffect(() => {
         // storing input name
@@ -59,54 +66,35 @@ function DashBoard() {
 
 
 
-    },[]);
-    console.log(transactions);
-
+    }, []);
 
     return (
-        <div>
+        <div className = "App">
             <div >
-
                 <p>You have </p>
                 <h2> SGD {balance}</h2> <p>in your account </p>
-
-
+            </div>
+            <div >
+                <table>
+                    <tbody>
+                        {transactions.map((item, index) => {
+                            return (
+                                <tr className={item.type} key={item.id}>
+                                    <td>{moment(item.date).format("DD MMM")}</td>
+                                    <td>{item.type}</td>
+                                    <td>{item.currency}</td>
+                                    <td>{item.amount}</td>
+                                    {item.type ==='transfer' ? <td>{item.to.accountNo}</td> : <td>{item.from.accountNo}</td>}
+                                    <td>{item.description}</td></tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </div>
             <div>
-                
-                {transactions.map((item, index) => {
-                    return (
-                        <table> 
-
-                        < tr key={index}  >
-                            {item.type == 'transfer' &&
-                                <tr className="send">
-
-                                    <td>{moment(item.date).format("DD MMM")}</td>
-                                    <td>{item.type}</td>
-                                    <td>{item.currency}</td>
-                                    <td>{item.amount}</td>
-                                    <td>{item.to.accountNo}</td>
-                                    <td>{item.description}</td></tr>
-                            }
-                            {item.type == 'receive' &&
-                                <tr className="receive">
-
-                                    <td>{moment(item.date).format("DD MMM")}</td>
-                                    <td>{item.type}</td>
-                                    <td>{item.currency}</td>
-                                    <td>{item.amount}</td>
-                                    <td>{item.from.accountNo}</td>
-                                    <td>{item.description}</td></tr>}
-
-
-                        </tr>
-                        </table>
-
-
-                    );
-                })}
-
+                <button onClick={transferRedirect}>
+                    Make a Transfer
+                </button>
             </div>
         </div>
 

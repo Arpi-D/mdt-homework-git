@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from 'react-router-dom';
 
 function Transfer() {
     const [payee, setPayee] = useState([]);
@@ -6,7 +7,7 @@ function Transfer() {
     const [date,setDate] = useState(" ")
     const [description, setDescription]= useState(" ")
     const [amount,setAmount] = useState(" ")
-
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -33,7 +34,10 @@ function Transfer() {
                 console.log(error)
             })
     },[]);
-
+    const cancel = (event) => {
+        event.preventDefault()
+        history.push("/dashboard")
+    }
     const handleChange = e => {
         console.log(e.target.value)
         setSelectedValue(e.target.value)
@@ -91,6 +95,11 @@ function Transfer() {
                 <label>accountNo </label> {selectedValue}
                 <input type="submit" value="Submit" />
             </form>
+            <div>
+            <button onClick={cancel}>
+                    Cancel
+                </button>
+                </div>
         </div>
     );
 
