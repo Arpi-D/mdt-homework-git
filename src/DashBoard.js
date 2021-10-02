@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 
 function DashBoard() {
 
@@ -42,8 +43,11 @@ function DashBoard() {
                 })
                 .then(data1=> {
 
-                  // setTransactions(data1.data)
-                    console.log(data1.data[1])
+                    let transactions = data1.data
+
+                    setTransactions(transactions)
+                  
+                    console.log(transactions[1])
                    
 
                          
@@ -51,19 +55,54 @@ function DashBoard() {
                 .catch(error => {
                     console.log(error)
                 })
+                
+     
 
       });
+      console.log(transactions);
 
 
     return (
      <div>   
       <div > 
-          <p>You have </p>
+    
+      <p>You have </p>
           <h2> SGD {balance}</h2> <p>in your account </p>
+        
 
       </div>
       <div>
-       
+      {transactions.map(( item, index ) => {
+          return (
+            
+            < tr  key={index}  >
+                {item.type=='transfer' && 
+                <tr className= "send"> 
+                
+              <td>{item.date}</td>
+              <td>{item.type}</td>
+              <td>{item.currency}</td>
+              <td>{item.amount}</td>
+        
+              <td>{item.description}</td></tr>
+                }
+                {item.type=='receive' && 
+                <tr className= "receive"> 
+                
+                <td>{item.date}</td>
+                <td>{item.type}</td>
+                <td>{item.currency}</td>
+                <td>{item.amount}</td>
+          
+                <td>{item.description}</td></tr> }
+      
+   
+            </tr>
+            
+           
+          );
+        })}
+         
     </div>
       </div>
       

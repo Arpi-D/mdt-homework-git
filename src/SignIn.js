@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DashBoard from './DashBoard';
 
 export function SignIn() {
     const [username, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("");
-    
+    const [status, setStatus] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,9 +26,8 @@ export function SignIn() {
                 if(data.status="success")
                 {
                     setToken(data.token)
+                    setStatus(data.status)
                     localStorage.setItem("token",data.token)
-                    console.log("success")
-                    
                 }
                 
             })
@@ -42,7 +41,7 @@ export function SignIn() {
 
     return (
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
             <label>User Name</label>
             <input type="text" value={username} onChange={event => setUserName(event.target.value)} />
             <div>
