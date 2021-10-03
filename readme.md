@@ -3,13 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Screenshot of the homework
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
-![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)
+Solarized dark             |  Solarized Ocean          |  Solarized Ocean
+:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)
 
 Solarized dark             |  Solarized Ocean
 :-------------------------:|:-------------------------:
-![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)
+![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)
 
 ## Available Scripts
 
