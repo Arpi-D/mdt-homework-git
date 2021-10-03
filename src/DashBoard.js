@@ -16,6 +16,13 @@ function DashBoard() {
         history.push("/transfer")
     }
 
+    const logOut = (event) => {
+        event.preventDefault()
+        localStorage.removeItem("token")
+        history.push("/signin")
+
+    }
+
     useEffect(() => {
         // storing input name
         const token = localStorage.getItem('token');
@@ -68,31 +75,42 @@ function DashBoard() {
 
     }, []);
 
+
     return (
-        <div className = "App">
-            <div >
-                <p>You have </p>
-                <h2> SGD {balance}</h2> <p>in your account </p>
+        <div className="App">
+            <div className="buttonLogoutStyle">
+                <button className="buttonLogout" onClick={logOut}>
+                    Logout
+                </button>
             </div>
-            <div >
+
+            <div className="displayBalance">
+                <p>You have </p>
+                <p className="accountBal"> SGD {balance}</p> <p>in your account </p>
+            </div>
+            <hr className="line" />
+            <div className="transactionTable">
+                <div><h2>Your Activity</h2></div>
                 <table>
                     <tbody>
                         {transactions.map((item, index) => {
                             return (
-                                <tr className={item.type} key={item.id}>
-                                    <td>{moment(item.date).format("DD MMM")}</td>
-                                    <td>{item.type}</td>
-                                    <td>{item.currency}</td>
-                                    <td>{item.amount}</td>
-                                    {item.type ==='transfer' ? <td>{item.to.accountNo}</td> : <td>{item.from.accountNo}</td>}
-                                    <td>{item.description}</td></tr>
+                                <tr key={item.id}>
+                                    <td className="transactionDate" >{moment(item.date).format("DD MMM")}</td>
+
+                                    {item.type === 'transfer' ? <td className="tdDetails"> {item.type} to {item.to.accountHolderName}  </td>
+                                        : <td className="tdDetails"> {item.type} from {item.from.accountHolderName}</td>}
+
+                                    {item.type === 'transfer' ? <td className={item.type}>-{item.amount}</td>
+                                        : <td className={item.type}>{item.amount}</td>}
+                                </tr>
                             );
                         })}
                     </tbody>
                 </table>
             </div>
             <div>
-                <button onClick={transferRedirect}>
+                <button className="buttonTransfer" onClick={transferRedirect}>
                     Make a Transfer
                 </button>
             </div>
