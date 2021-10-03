@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import '../App.css';
 import moment from 'moment';
 import { useHistory } from 'react-router-dom';
 
-
-
 function DashBoard() {
-
     const [balance, setBalanace] = useState("");
     const [transactions, setTransactions] = useState([]);
     const history = useHistory();
@@ -25,22 +22,18 @@ function DashBoard() {
 
     useEffect(() => {
         // storing input name
+        // TDB validate Token expiry time
         const token = localStorage.getItem('token');
-        console.log(token)
         const requestOptions1 = {
             method: 'GET',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'Authorization': token },
-
         };
         fetch('http://localhost:8080/account/balances', requestOptions1)
             .then(response => {
-                console.log(requestOptions1)
                 return response.json()
             })
             .then(data => {
-                console.log(data.balance)
                 setBalanace(data.balance)
-
             })
             .catch(error => {
                 console.log(error)
@@ -53,26 +46,15 @@ function DashBoard() {
         };
         fetch('http://localhost:8080/account/transactions', requestOptions2)
             .then(response => {
-                console.log(requestOptions2)
                 return response.json()
             })
             .then(data1 => {
-
                 let transactions = data1.data
-
                 setTransactions(transactions)
-
-                console.log(transactions[1])
-
-
-
             })
             .catch(error => {
                 console.log(error)
             })
-
-
-
     }, []);
 
 

@@ -6,7 +6,6 @@
   margin-top: 5vh;
   flex-direction: column;
 }
-
 .SignIN
 {
   margin-top:50vh;
@@ -30,7 +29,6 @@
   margin-top: 10vh;
   background-color: lightgrey
 }
-
 /* Dashboard Page CSS*/
 .displayBalance
 {
@@ -44,7 +42,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .buttonLogoutStyle
 {
   width: 265px;
@@ -57,7 +54,6 @@
   font-size: 30px;
   font-weight: bolder;
 }
-
 .transactionTable
 {
   display: flex;
@@ -65,21 +61,16 @@
   align-items: center;
   margin: 2vw;
   flex-direction: column;
- 
 }
-
 .line{
   width:265px;
   height: 1;
   background-color: grey;
   margin-top: 5vh;
 }
-
 .hr{
   width: 5px;
 }
-
-
 .transactionDate{
   font-weight: bold;
   text-align: left;
@@ -89,7 +80,6 @@
   text-align: left;
   margin: 2px;
 }
-
 .transfer{
   color: red;
   text-align: right;
@@ -113,16 +103,12 @@
   color: blue;
   background-color: white;
 }
-
 .buttonLogout{
   outline: 0;
   border-width: 0 ;
   background-color: white;
   color: blue;
-
 }
-
-
 /*Transfer Page CSS */
 .transferPage
 {
@@ -145,7 +131,6 @@
   justify-content: center;
   margin-top: 20vh;
 }
-
 .inputButtonTransfer{
   width: 100px;
   height: 30px;
@@ -156,7 +141,6 @@
   margin-top: 10px;
   background-color: lightgrey
 }
-
 .transferDropdown{
   outline: 0;
   width: 255px;
@@ -166,7 +150,6 @@
   border-width: 0 0 2px;
   border-color: gray;
 }
-
 .repText{
   font: blue;
 }

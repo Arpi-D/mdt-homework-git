@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Route,Switch } from 'react-router-dom';
-import './App.css';
-import Transfer from './Transfer';
-import SignIn from "./SignIn"
-import DashBoard from './DashBoard';
-import PrivateRoute from './PrivateRoute';
+import Transfer from './screens/Transfer';
+import SignIn from "./screens/SignIn"
+import DashBoard from './screens/DashBoard';
+import PrivateRoute from './Components/PrivateRoute';
 
 
 function App() {
