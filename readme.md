@@ -5,11 +5,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Screenshot of the homework
 Login Page            |  Login Page Input Validation          |  Dashboard Page
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot2.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot3.png)
+![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot1.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot2.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot3.png)
 
 Make Transfer              |  Make transfer field validation          |  Make transfer account validation
 :-------------------------:|:-------------------------:|:-------------------------:
-![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot4.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot6.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/features/submit/screenshots/Screenshot7.png)
+![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot4.png)  |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot6.png) |  ![](https://github.com/Arpi-D/mdt-homework-git/blob/main/screenshots/Screenshot7.png)
 
   
 
